@@ -5,7 +5,7 @@
 #include <time.h>
 #include <stdbool.h>
 
-#define ROW 2
+#define ROW 8
 #define COLUMN 150
 
 // HISTORY - EASY
@@ -16,7 +16,7 @@ typedef struct
 } TriviaQuestion;
 
 // HISTORY - EASY
-TriviaQuestion easy_hist[8] = {
+TriviaQuestion easy_hist[ROW] = {
     {"Who discovered gravity with an apple?\nA. Galileo\nB. Newton\nC. Einstein\nD. Tesla", 'B'},
     {"Who is the Father of Computing?\nA. Charles Babbage\nB. Alan Turing\nC. Bill Gates\nD. Steve Jobs", 'A'},
     {"Who invented the lightbulb?\nA. Alexander Bell\nB. Thomas Edison\nC. Henry Ford\nD. James Watt", 'B'},
@@ -27,7 +27,7 @@ TriviaQuestion easy_hist[8] = {
     {"Who invented the telephone?\nA. Samuel Morse\nB. Alexander Graham Bell\nC. Nikola Tesla\nD. Eli Whitney", 'B'}};
 
 // HISTORY - MEDIUM
-TriviaQuestion med_hist[8] = {
+TriviaQuestion med_hist[ROW] = {
     {"Who won Nobel Prizes in two different sciences?\nA. Marie Curie\nB. Linus Pauling\nC. John Bardeen\nD. Frederick Sanger", 'A'},
     {"Who developed the first polio vaccine?\nA. Albert Sabin\nB. Edward Jenner\nC. Jonas Salk\nD. Robert Koch", 'C'},
     {"Which ancient Greek shouted 'Eureka' in a bath?\nA. Pythagoras\nB. Archimedes\nC. Euclid\nD. Aristotle", 'B'},
@@ -38,7 +38,7 @@ TriviaQuestion med_hist[8] = {
     {"Who is the Father of Optics?\nA. Ibn al-Haytham\nB. Johannes Kepler\nC. Christiaan Huygens\nD. Max Planck", 'A'}};
 
 // HISTORY - HARD
-TriviaQuestion hard_hist[8] = {
+TriviaQuestion hard_hist[ROW] = {
     {"Who wrote the first computer algorithm?\nA. Ada Lovelace\nB. Grace Hopper\nC. Alan Turing\nD. Blaise Pascal", 'A'},
     {"Who found the Uncertainty Principle?\nA. Werner Heisenberg\nB. Erwin Schrodinger\nC. Max Planck\nD. Paul Dirac", 'A'},
     {"Who proposed the Big Bang theory?\nA. Edwin Hubble\nB. Stephen Hawking\nC. Georges Lemaitre\nD. Carl Sagan", 'C'},
@@ -49,7 +49,7 @@ TriviaQuestion hard_hist[8] = {
     {"Who discovered Radioactivity?\nA. Henri Becquerel\nB. Ernest Rutherford\nC. JJ Thomson\nD. James Chadwick", 'A'}};
 
 // SCIENCE - EASY
-TriviaQuestion easy_sci[8] = {
+TriviaQuestion easy_sci[ROW] = {
     {"The Red Planet?\nA. Venus\nB. Mars\nC. Jupiter\nD. Saturn", 'B'},
     {"Symbol for Gold?\nA. Gd\nB. Ag\nC. Au\nD. Fe", 'C'},
     {"Organ that pumps blood?\nA. Lungs\nB. Brain\nC. Heart\nD. Liver", 'C'},
@@ -60,7 +60,7 @@ TriviaQuestion easy_sci[8] = {
     {"Adult human teeth count?\nA. 28\nB. 30\nC. 32\nD. 34", 'C'}};
 
 // SCIENCE - MEDIUM
-TriviaQuestion med_sci[8] = {
+TriviaQuestion med_sci[ROW] = {
     {"Most abundant gas in air?\nA. Oxygen\nB. Nitrogen\nC. Argon\nD. CO2", 'B'},
     {"Speed of sound (m/s)?\nA. 343\nB. 299,792\nC. 150\nD. 1000", 'A'},
     {"Bones in adult human body?\nA. 204\nB. 206\nC. 210\nD. 212", 'B'},
@@ -71,7 +71,7 @@ TriviaQuestion med_sci[8] = {
     {"Planet with most moons?\nA. Jupiter\nB. Saturn\nC. Neptune\nD. Mars", 'B'}};
 
 // SCIENCE - HARD
-TriviaQuestion hard_sci[8] = {
+TriviaQuestion hard_sci[ROW] = {
     {"Absolute zero in Celsius?\nA. -273.15\nB. 0\nC. -100\nD. -32", 'A'},
     {"Heaviest natural element?\nA. Uranium\nB. Plutonium\nC. Lead\nD. Osmium", 'A'},
     {"Negatively charged particle?\nA. Proton\nB. Neutron\nC. Electron\nD. Photon", 'C'},
@@ -82,7 +82,7 @@ TriviaQuestion hard_sci[8] = {
     {"Unit of magnetic flux?\nA. Tesla\nB. Weber\nC. Gauss\nD. Henry", 'B'}};
 
 // MATH - EASY
-TriviaQuestion easy_math[8] = {
+TriviaQuestion easy_math[ROW] = {
     {"12 x 12 = ?\nA. 124\nB. 144\nC. 164\nD. 142", 'B'},
     {"Square root of 81?\nA. 7\nB. 9\nC. 8\nD. 10", 'B'},
     {"25% of 100?\nA. 10\nB. 25\nC. 50\nD. 20", 'B'},
@@ -93,7 +93,7 @@ TriviaQuestion easy_math[8] = {
     {"100 divided by 4?\nA. 20\nB. 25\nC. 30\nD. 40", 'B'}};
 
 // MATH - MEDIUM
-TriviaQuestion med_math[8] = {
+TriviaQuestion med_math[ROW] = {
     {"Value of Pi (2 decimal)?\nA. 3.12\nB. 3.14\nC. 3.16\nD. 3.18", 'B'},
     {"Solve: 2x - 4 = 10\nA. 3\nB. 5\nC. 7\nD. 14", 'C'},
     {"2 to the power of 5?\nA. 16\nB. 24\nC. 32\nD. 64", 'C'},
@@ -104,7 +104,7 @@ TriviaQuestion med_math[8] = {
     {"Solve: 10 + 5 * 2\nA. 30\nB. 20\nC. 25\nD. 15", 'B'}};
 
 // MATH - HARD
-TriviaQuestion hard_math[8] = {
+TriviaQuestion hard_math[ROW] = {
     {"Derivative of x^3?\nA. x^2\nB. 3x^2\nC. 2x^3\nD. 3x", 'B'},
     {"Log(100) base 10?\nA. 1\nB. 2\nC. 3\nD. 10", 'B'},
     {"Sum of angles in a hexagon?\nA. 360\nB. 540\nC. 720\nD. 900", 'C'},
@@ -115,7 +115,7 @@ TriviaQuestion hard_math[8] = {
     {"Zeros in a billion?\nA. 6\nB. 7\nC. 8\nD. 9", 'D'}};
 
 // ENGLISH - EASY
-TriviaQuestion easy_eng[8] = {
+TriviaQuestion easy_eng[ROW] = {
     {"Synonym for 'Huge'?\nA. Tiny\nB. Large\nC. Fast\nD. Cold", 'B'},
     {"Opposite of 'Hard'?\nA. Difficult\nB. Soft\nC. Firm\nD. Solid", 'B'},
     {"Which is a vowel?\nA. B\nB. E\nC. D\nD. F", 'B'},
@@ -126,7 +126,7 @@ TriviaQuestion easy_eng[8] = {
     {"Punctuation for a question?\nA. Period\nB. Question Mark\nC. Comma\nD. Colon", 'B'}};
 
 // ENGLISH - MEDIUM
-TriviaQuestion med_eng[8] = {
+TriviaQuestion med_eng[ROW] = {
     {"Which is an adjective?\nA. Quickly\nB. Quick\nC. Run\nD. Happiness", 'B'},
     {"Group of lions called?\nA. Pack\nB. Herd\nC. Pride\nD. Flock", 'C'},
     {"Plural of 'Mouse'?\nA. Mouses\nB. Mice\nC. Mices\nD. Meese", 'B'},
@@ -137,7 +137,7 @@ TriviaQuestion med_eng[8] = {
     {"A person who writes books:\nA. Author\nB. Editor\nC. Publisher\nD. Reader", 'A'}};
 
 // ENGLISH - HARD
-TriviaQuestion hard_eng[8] = {
+TriviaQuestion hard_eng[ROW] = {
     {"What is 'Onomatopoeia'?\nA. Comparison\nB. Word sounding like its meaning\nC. A repeat\nD. A lie", 'B'},
     {"Example of a Metaphor:\nA. Life is a highway\nB. Cold as ice\nC. Busy as a bee\nD. Red like a rose", 'A'},
     {"Main character of a story:\nA. Antagonist\nB. Protagonist\nC. Narrator\nD. Author", 'B'},
@@ -149,48 +149,69 @@ TriviaQuestion hard_eng[8] = {
 
 int check_answer(char, char);
 int quiz_user(char, char, int);
-void result_prompt(int, int);
 
 int main()
 {
     int total = 0, number_of_questions;
     char option, subject, difficulty;
     bool used_questions[ROW];
+    bool is_valid[2] = {false};
 
     srand(time(NULL));
 
     for (;;)
     {
-        printf("Select a subject to be quizzed on : \nE - English\nM - Mathematics\nS - Science\nH - History\n");
-        subject = getchar();
-        getchar();
-        printf("Select difficulty :\nE - Easy\nM - Medium\nH - Hard\n");
-        difficulty = getchar();
-        getchar();
-        printf("How many questions do you want to answer (The maximum is 8 ):");
-        scanf("%d", &number_of_questions);
-        getchar();
-        if (number_of_questions > 8)
-        {
-            printf("Your input exceeds the maximum.\n");
-            continue;
-        }
-        total = quiz_user(subject, difficulty, number_of_questions);
-        result_prompt(total, number_of_questions);
-        option = getchar();
+        char subject, difficulty;
+        int number_of_questions;
 
-        if (option == 'n' || option == 'N')
+        // 1. Get Subject
+        do
         {
-            break;
-        }
+            printf("Select Subject (E, M, S, H): ");
+            subject = toupper(getchar());
+            while (getchar() != '\n')
+                ; // Clear buffer
+
+            if (subject != 'E' && subject != 'M' && subject != 'S' && subject != 'H')
+            {
+                printf("Invalid subject. ");
+                subject = '\0'; // Reset to keep loop going
+            }
+        } while (subject == '\0');
+
+        // 2. Get Difficulty
+        do
+        {
+            printf("Select Difficulty (E, M, H): ");
+            difficulty = toupper(getchar());
+            while (getchar() != '\n')
+                ;
+
+            if (difficulty != 'E' && difficulty != 'M' && difficulty != 'H')
+            {
+                printf("Invalid difficulty. ");
+                difficulty = '\0';
+            }
+        } while (difficulty == '\0');
+
+        // 3. Get Question Count
+        do
+        {
+            printf("How many questions (Max 8): ");
+            if (scanf("%d", &number_of_questions) != 1)
+            {
+                while (getchar() != '\n')
+                    ;
+                number_of_questions = 0;
+            }
+            if (number_of_questions < 1 || number_of_questions > 8)
+            {
+                printf("Please enter a number between 1 and 8.\n");
+            }
+        } while (number_of_questions < 1 || number_of_questions > 8);
     }
 }
 
-void result_prompt(int t, int r)
-{
-    printf("\nYou got %d out of %d questions correct.", t, r);
-    printf("\nDo you want to take another quiz ? (y for yes\nnfor no): ");
-}
 int check_answer(char a, char b)
 {
     int add = 0;
@@ -205,203 +226,99 @@ int check_answer(char a, char b)
     }
     return add;
 }
-int quiz_user(char c, char d, int n)
+int run_loop(TriviaQuestion q[], int n)
 {
     int total_score = 0, i;
-    char option, user_answer, subject, difficulty;
-    bool used_questions[ROW];
-
-    if (toupper(c) == 'E' && toupper(d) == 'E') // easy english questions
+    char user_answer;
+    bool used_questions[ROW] = {false};
+    for (int j = 1; j < n + 1;)
     {
-        for (int j = 1; j < n + 1;)
+        i = rand() % n;
+        if (!used_questions[i])
         {
-            i = rand() % n;
-            if (!used_questions[i])
-            {
-                printf("\n%d. %s\nYour answer: ", j, easy_eng[i].question);
-                user_answer = getchar();
-                getchar();
-                total_score += check_answer(user_answer, easy_eng[i].answer);
-                used_questions[i] = true;
-                j++;
-            }
-        }
-    }
-    if (toupper(c) == 'E' && toupper(d) == 'M') // medium English questions
-    {
-        for (int j = 1; j < n + 1;)
-        {
-            i = rand() % n;
-            if (!used_questions[i])
-            {
-                printf("\n%d. %s\nYour answer: ", j, med_eng[i].question);
-                user_answer = getchar();
-                getchar();
-                total_score += check_answer(user_answer, med_eng[i].answer);
-                used_questions[i] = true;
-                j++;
-            }
-        }
-    }
-    if (toupper(c) == 'E' && toupper(d) == 'H') // hard English questions
-    {
-        for (int j = 1; j < n + 1;)
-        {
-            i = rand() % n;
-            if (!used_questions[i])
-            {
-                printf("\n%d. %s\nYour answer: ", j, hard_eng[i].question);
-                user_answer = getchar();
-                getchar();
-                total_score += check_answer(user_answer, hard_eng[i].answer);
-                used_questions[i] = true;
-                j++;
-            }
-        }
-    }
-    if (toupper(c) == 'M' && toupper(d) == 'E') // Easy Math questions
-    {
-        for (int j = 1; j < n + 1;)
-        {
-            i = rand() % n;
-            if (!used_questions[i])
-            {
-                printf("\n%d. %s\nYour answer: ", j, easy_math[i].question);
-                user_answer = getchar();
-                getchar();
-                total_score += check_answer(user_answer, easy_math[i].answer);
-                used_questions[i] = true;
-                j++;
-            }
-        }
-    }
-    if (toupper(c) == 'M' && toupper(d) == 'M') // medium math questions
-    {
-        for (int j = 1; j < n + 1;)
-        {
-            i = rand() % n;
-            if (!used_questions[i])
-            {
-                printf("\n%d. %s\nYour answer: ", j, med_math[i].question);
-                user_answer = getchar();
-                getchar();
-                total_score += check_answer(user_answer, med_math[i].answer);
-                used_questions[i] = true;
-                j++;
-            }
-        }
-    }
-    if (toupper(c) == 'M' && toupper(d) == 'H') // hard math questions
-    {
-        for (int j = 1; j < n + 1;)
-        {
-            i = rand() % n;
-            if (!used_questions[i])
-            {
-                printf("\n%d. %s\nYour answer: ", j, hard_math[i].question);
-                user_answer = getchar();
-                getchar();
-                total_score += check_answer(user_answer, hard_math[i].answer);
-                used_questions[i] = true;
-                j++;
-            }
-        }
-    }
-    if (toupper(c) == 'S' && toupper(d) == 'E') // easy science questions
-    {
-        for (int j = 1; j < n + 1;)
-        {
-            i = rand() % n;
-            if (!used_questions[i])
-            {
-                printf("\n%d. %s\nYour answer: ", j, easy_sci[i].question);
-                user_answer = getchar();
-                getchar();
-                total_score += check_answer(user_answer, easy_sci[i].answer);
-                used_questions[i] = true;
-                j++;
-            }
-        }
-    }
-    if (toupper(c) == 'S' && toupper(d) == 'M') // medium math questions
-    {
-        for (int j = 1; j < n + 1;)
-        {
-            i = rand() % n;
-            if (!used_questions[i])
-            {
-                printf("\n%d. %s\nYour answer: ", j, med_sci[i].question);
-                user_answer = getchar();
-                getchar();
-                total_score += check_answer(user_answer, med_sci[i].answer);
-                used_questions[i] = true;
-                j++;
-            }
-        }
-    }
-    if (toupper(c) == 'S' && toupper(d) == 'H') // hard science questions
-    {
-        for (int j = 1; j < n + 1;)
-        {
-            i = rand() % n;
-            if (!used_questions[i])
-            {
-                printf("\n%d. %s\nYour answer: ", j, hard_sci[i].question);
-                user_answer = getchar();
-                getchar();
-                total_score += check_answer(user_answer, hard_sci[i].answer);
-                used_questions[i] = true;
-                j++;
-            }
-        }
-    }
-    if (toupper(c) == 'H' && toupper(d) == 'E') // easy history questions
-    {
-        for (int j = 1; j < n + 1;)
-        {
-            i = rand() % n;
-            if (!used_questions[i])
-            {
-                printf("\n%d. %s\nYour answer: ", j, easy_hist[i].question);
-                user_answer = getchar();
-                getchar();
-                total_score += check_answer(user_answer, easy_hist[i].answer);
-                used_questions[i] = true;
-                j++;
-            }
-        }
-    }
-    if (toupper(c) == 'H' && toupper(d) == 'M') // medium history questions
-    {
-        for (int j = 1; j < n + 1;)
-        {
-            i = rand() % n;
-            if (!used_questions[i])
-            {
-                printf("\n%d. %s\nYour answer: ", j, med_hist[i].question);
-                user_answer = getchar();
-                getchar();
-                total_score += check_answer(user_answer, med_hist[i].answer);
-                used_questions[i] = true;
-                j++;
-            }
-        }
-    }
-    if (toupper(c) == 'H' && toupper(d) == 'H') // hard history questions
-    {
-        for (int j = 1; j < n + 1;)
-        {
-            i = rand() % n;
-            if (!used_questions[i])
-            {
-                printf("\n%d. %s\nYour answer: ", j, hard_hist[i].question);
-                user_answer = getchar();
-                getchar();
-                total_score += check_answer(user_answer, hard_hist[i].answer);
-                used_questions[i] = true;
-                j++;
-            }
+            printf("\n%d. %s\nYour answer: ", j, q[i].question);
+            user_answer = getchar();
+            getchar();
+            total_score += check_answer(user_answer, q[i].answer);
+            used_questions[i] = true;
+            j++;
         }
     }
     return total_score;
+}
+
+int quiz_user(char c, char d, int n)
+{
+    c = toupper(c);
+    d = toupper(d);
+    int score = 0;
+
+    switch (c)
+    {
+    case 'E': // English
+        switch (d)
+        {
+        case 'E':
+            score = run_loop(easy_eng, n);
+            break;
+        case 'M':
+            score = run_loop(med_eng, n);
+            break;
+        case 'H':
+            score = run_loop(hard_eng, n);
+            break;
+        }
+        break;
+
+    case 'M': // Math
+        switch (d)
+        {
+        case 'E':
+            score = run_loop(easy_math, n);
+            break;
+        case 'M':
+            score = run_loop(med_math, n);
+            break;
+        case 'H':
+            score = run_loop(hard_math, n);
+            break;
+        }
+        break;
+
+    case 'S': // Science
+        switch (d)
+        {
+        case 'E':
+            score = run_loop(easy_sci, n);
+            break;
+        case 'M':
+            score = score = run_loop(med_sci, n);
+            break;
+        case 'H':
+            score = run_loop(hard_sci, n);
+            break;
+        }
+        break;
+
+    case 'H': // History
+        switch (d)
+        {
+        case 'E':
+            score = run_loop(easy_hist, n);
+            break;
+        case 'M':
+            score = run_loop(med_hist, n);
+            break;
+        case 'H':
+            score = run_loop(hard_hist, n);
+            break;
+        }
+        break;
+
+    default:
+        printf("Invalid subject selection.\n");
+        break;
+    }
+
+    return score;
 }
