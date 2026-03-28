@@ -169,20 +169,19 @@ int main()
         getchar();
         printf("How many questions do you want to answer (The maximum is 8 ):");
         scanf("%d", &number_of_questions);
+        getchar();
         if (number_of_questions > 8)
         {
             printf("Your input exceeds the maximum.\n");
+            continue;
         }
-        else
-        {
-            total = quiz_user(subject, difficulty, number_of_questions);
-            result_prompt(total, number_of_questions);
-            option = getchar();
+        total = quiz_user(subject, difficulty, number_of_questions);
+        result_prompt(total, number_of_questions);
+        option = getchar();
 
-            if (option == 'n' || option == 'N')
-            {
-                break;
-            }
+        if (option == 'n' || option == 'N')
+        {
+            break;
         }
     }
 }
@@ -219,10 +218,10 @@ int quiz_user(char c, char d, int n)
             i = rand() % n;
             if (!used_questions[i])
             {
-                printf("\n%d. %s\nYour answer: ", j, easy_eng[i]);
+                printf("\n%d. %s\nYour answer: ", j, easy_eng[i].question);
                 user_answer = getchar();
                 getchar();
-                total_score += check_answer(user_answer, easy_eng_ans[i]);
+                total_score += check_answer(user_answer, easy_eng[i].answer);
                 used_questions[i] = true;
                 j++;
             }
@@ -235,10 +234,10 @@ int quiz_user(char c, char d, int n)
             i = rand() % n;
             if (!used_questions[i])
             {
-                printf("\n%d. %s\nYour answer: ", j, med_eng[i]);
+                printf("\n%d. %s\nYour answer: ", j, med_eng[i].question);
                 user_answer = getchar();
                 getchar();
-                total_score += check_answer(user_answer, med_eng_ans[i]);
+                total_score += check_answer(user_answer, med_eng[i].answer);
                 used_questions[i] = true;
                 j++;
             }
@@ -251,10 +250,10 @@ int quiz_user(char c, char d, int n)
             i = rand() % n;
             if (!used_questions[i])
             {
-                printf("\n%d. %s\nYour answer: ", j, hard_eng[i]);
+                printf("\n%d. %s\nYour answer: ", j, hard_eng[i].question);
                 user_answer = getchar();
                 getchar();
-                total_score += check_answer(user_answer, hard_eng_ans[i]);
+                total_score += check_answer(user_answer, hard_eng[i].answer);
                 used_questions[i] = true;
                 j++;
             }
@@ -267,10 +266,10 @@ int quiz_user(char c, char d, int n)
             i = rand() % n;
             if (!used_questions[i])
             {
-                printf("\n%d. %s\nYour answer: ", j, easy_math[i]);
+                printf("\n%d. %s\nYour answer: ", j, easy_math[i].question);
                 user_answer = getchar();
                 getchar();
-                total_score += check_answer(user_answer, easy_math_ans[i]);
+                total_score += check_answer(user_answer, easy_math[i].answer);
                 used_questions[i] = true;
                 j++;
             }
@@ -283,10 +282,10 @@ int quiz_user(char c, char d, int n)
             i = rand() % n;
             if (!used_questions[i])
             {
-                printf("\n%d. %s\nYour answer: ", j, med_math[i]);
+                printf("\n%d. %s\nYour answer: ", j, med_math[i].question);
                 user_answer = getchar();
                 getchar();
-                total_score += check_answer(user_answer, med_math_ans[i]);
+                total_score += check_answer(user_answer, med_math[i].answer);
                 used_questions[i] = true;
                 j++;
             }
@@ -299,10 +298,10 @@ int quiz_user(char c, char d, int n)
             i = rand() % n;
             if (!used_questions[i])
             {
-                printf("\n%d. %s\nYour answer: ", j, hard_math[i]);
+                printf("\n%d. %s\nYour answer: ", j, hard_math[i].question);
                 user_answer = getchar();
                 getchar();
-                total_score += check_answer(user_answer, hard_math_ans[i]);
+                total_score += check_answer(user_answer, hard_math[i].answer);
                 used_questions[i] = true;
                 j++;
             }
@@ -315,10 +314,10 @@ int quiz_user(char c, char d, int n)
             i = rand() % n;
             if (!used_questions[i])
             {
-                printf("\n%d. %s\nYour answer: ", j, easy_sci[i]);
+                printf("\n%d. %s\nYour answer: ", j, easy_sci[i].question);
                 user_answer = getchar();
                 getchar();
-                total_score += check_answer(user_answer, easy_sci_ans[i]);
+                total_score += check_answer(user_answer, easy_sci[i].answer);
                 used_questions[i] = true;
                 j++;
             }
@@ -331,10 +330,10 @@ int quiz_user(char c, char d, int n)
             i = rand() % n;
             if (!used_questions[i])
             {
-                printf("\n%d. %s\nYour answer: ", j, med_sci[i]);
+                printf("\n%d. %s\nYour answer: ", j, med_sci[i].question);
                 user_answer = getchar();
                 getchar();
-                total_score += check_answer(user_answer, med_sci_ans[i]);
+                total_score += check_answer(user_answer, med_sci[i].answer);
                 used_questions[i] = true;
                 j++;
             }
@@ -347,10 +346,10 @@ int quiz_user(char c, char d, int n)
             i = rand() % n;
             if (!used_questions[i])
             {
-                printf("\n%d. %s\nYour answer: ", j, hard_sci[i]);
+                printf("\n%d. %s\nYour answer: ", j, hard_sci[i].question);
                 user_answer = getchar();
                 getchar();
-                total_score += check_answer(user_answer, hard_sci_ans[i]);
+                total_score += check_answer(user_answer, hard_sci[i].answer);
                 used_questions[i] = true;
                 j++;
             }
@@ -363,10 +362,10 @@ int quiz_user(char c, char d, int n)
             i = rand() % n;
             if (!used_questions[i])
             {
-                printf("\n%d. %s\nYour answer: ", j, easy_hist[i]);
+                printf("\n%d. %s\nYour answer: ", j, easy_hist[i].question);
                 user_answer = getchar();
                 getchar();
-                total_score += check_answer(user_answer, easy_hist_ans[i]);
+                total_score += check_answer(user_answer, easy_hist[i].answer);
                 used_questions[i] = true;
                 j++;
             }
@@ -379,10 +378,10 @@ int quiz_user(char c, char d, int n)
             i = rand() % n;
             if (!used_questions[i])
             {
-                printf("\n%d. %s\nYour answer: ", j, med_hist[i]);
+                printf("\n%d. %s\nYour answer: ", j, med_hist[i].question);
                 user_answer = getchar();
                 getchar();
-                total_score += check_answer(user_answer, med_hist_ans[i]);
+                total_score += check_answer(user_answer, med_hist[i].answer);
                 used_questions[i] = true;
                 j++;
             }
@@ -395,10 +394,10 @@ int quiz_user(char c, char d, int n)
             i = rand() % n;
             if (!used_questions[i])
             {
-                printf("\n%d. %s\nYour answer: ", j, hard_hist[i]);
+                printf("\n%d. %s\nYour answer: ", j, hard_hist[i].question);
                 user_answer = getchar();
                 getchar();
-                total_score += check_answer(user_answer, hard_hist_ans[i]);
+                total_score += check_answer(user_answer, hard_hist[i].answer);
                 used_questions[i] = true;
                 j++;
             }
